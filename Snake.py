@@ -44,3 +44,17 @@ class Body:
           MovableObject(
               self._create_circle(x, y, 5, fill="#BBB", outline=""), x, y,
               self._body[-1]._direction))
+  def change_direction(self, direction):
+    if direction == self._current_direction:
+      return
+    if direction == "left" and self._current_direction == "right":
+      return
+    elif direction == "right" and self._current_direction == "left":
+      return
+    elif direction == "up" and self._current_direction == "down":
+      return
+    elif direction == "down" and self._current_direction == "up":
+      return
+
+    self._current_direction = direction
+    self._body[0]._direction = self._get_dir(direction)
