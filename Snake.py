@@ -1,8 +1,8 @@
 import tkinter as tk
 
-"""
-Classes concerning the snake body and movement
-"""
+
+#Classes concerning the snake body and movement
+
 
 
 class Body:
@@ -45,7 +45,10 @@ class Body:
               self._create_circle(x, y, 5, fill="#BBB", outline=""), x, y,
               self._body[-1]._direction))
 
-   def change_direction(self, direction):
+ 
+
+
+ def change_direction(self, direction):
     if direction == self._current_direction:
       return
     if direction == "left" and self._current_direction == "right":
