@@ -21,7 +21,19 @@ class Game:
 
     self.points = 0
 
-
+def _key_press(self, event):
+    if event.keycode == 37:
+      # left arrow
+      self._game.change_snake_direction("left")
+    elif event.keycode == 38:
+      # up arrow
+      self._game.change_snake_direction("up")
+    elif event.keycode == 39:
+      # right arrow
+      self._game.change_snake_direction("right")
+    elif event.keycode == 40:
+      # down arrow
+      self._game.change_snake_direction("down")
 
 
 class Window(tk.Tk):
