@@ -1,8 +1,8 @@
 import tkinter as tk
 
-"""
-Classes concerning the snake body and movement
-"""
+
+#Classes concerning the snake body and movement
+
 
 
 class Body:
