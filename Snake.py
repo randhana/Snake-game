@@ -12,7 +12,7 @@ class Body:
     self._body = []
     self._current_direction = "right"
 
-    # create initial given the x and y position
+   
     self._create_initial(20, 20)
 
   def add(self, n):
