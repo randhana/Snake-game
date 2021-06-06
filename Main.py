@@ -9,10 +9,10 @@ class Game:
     self._canvas = canvas
     self._limits = limits
 
-    # create snake
+    # snake
     self._snake = Body(self._canvas)
 
-    # create walls
+    # walls
     self._walls = []
     self._create_walls()
 
@@ -20,32 +20,38 @@ class Game:
     self._count = 1
 
     self.points = 0
+    
+  def _check_hit(self):
+    # Check if hit or not
+    head = self._snake._body[0]
+    self._apple_rule(head)
+    self._wall_rule(head)
+    self._eat_itself_rule(head)
 
-def _key_press(self, event):
-    if event.keycode == 37:
-      # left arrow
-      self._game.change_snake_direction("left")
-    elif event.keycode == 38:
-      # up arrow
-      self._game.change_snake_direction("up")
-    elif event.keycode == 39:
-      # right arrow
-      self._game.change_snake_direction("right")
-    elif event.keycode == 40:
-      # down arrow
-      self._game.change_snake_direction("down")
+  def loop(self):
+  
+    self._snake.iterate()
+   
+    self._count -= 1
+    if self._count == 0:
+      self.generate_apple()
+
+    self._check_hit()
+
+  def _from_rgb(self, rgb):
+    
+    return "#%02x%02x%02x" % rgb  #rgb code represented as a tuple of integers.  
+
 
 
 class Window(tk.Tk):
-  """
-  Class that manages the window
-  """
+  
 
   def __init__(self, screenName=None, width=100, height=100):
-    # create main window
+    #  main window
     super().__init__(screenName=screenName)
 
-    # create canvas, where everything is drawn
+    # canvas
     self._canvas = tk.Canvas(
         self,
         width=width,
@@ -66,6 +72,27 @@ class Window(tk.Tk):
 
     # start tkinter
     self.mainloop()
+
+def _key_press(self, event):
+    if event.keycode == 37:
+      # left arrow
+      self._game.change_snake_direction("left")
+    elif event.keycode == 38:
+      # up arrow
+      self._game.change_snake_direction("up")
+    elif event.keycode == 39:
+      # right arrow
+      self._game.change_snake_direction("right")
+    elif event.keycode == 40:
+      # down arrow
+      self._game.change_snake_direction("down")
+
+def _loop(self):
+    self.after(100, func=self._loop)
+    self._game.loop()
+
+
+
 if __name__ == "__main__":
   # Start
   Window("Snakes", 500, 500)
