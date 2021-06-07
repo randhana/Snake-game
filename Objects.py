@@ -31,3 +31,11 @@ class Apple(StaticObject):
       self._color = (255, 235, 0)
 
 
+class Wall:
+
+  def __init__(self, tag, x_i, y_i, x_f, y_f):
+    self._id = tag
+    self._x_i = x_i
+    self._y_i = y_i
+    self._x_f = x_f
+    self._y_f = y_f
