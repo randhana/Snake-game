@@ -43,6 +43,9 @@ class Game:
     return "#%02x%02x%02x" % rgb  #rgb code represented as a tuple of integers.
 
 
+  def change_snake_direction(self, direction):
+    self._snake.change_direction(direction)
+    
 class Window(tk.Tk):
   
 
