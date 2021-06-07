@@ -44,6 +44,37 @@ class Game:
 
 
 
+  def generate_apple(self):
+    
+    self._count = random.randint(50, 70)
+    x = ((random.randint(self._limits[0], self._limits[2]) * 10) %
+         self._limits[2])
+
+    if x <= self._limits[0]:
+      x += 20
+    elif x >= self._limits[2]:
+      x -= 20
+
+    y = ((random.randint(self._limits[1], self._limits[3]) * 10) %
+         self._limits[3])
+
+    if y <= self._limits[1]:
+      y += 20
+    elif x >= self._limits[3]:
+      y -= 20
+
+    self._apples.append(
+        Apple(
+            self._canvas.create_oval(x - 5, y - 5, x + 5, y + 5, outline=""), x,
+            y))
+
+    # change color because i'm stupid (should have done the Objects classes diferent)
+    self._canvas.itemconfig(
+        self._apples[-1]._id, fill=self._from_rgb(self._apples[-1]._color))
+
+  def change_snake_direction(self, direction):
+    self._snake.change_direction(direction)
+    
 class Window(tk.Tk):
   
 
