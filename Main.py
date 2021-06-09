@@ -68,7 +68,6 @@ class Game:
             self._canvas.create_oval(x - 5, y - 5, x + 5, y + 5, outline=""), x,
             y))
 
-    # change color because i'm stupid (should have done the Objects classes diferent)
     self._canvas.itemconfig(
         self._apples[-1]._id, fill=self._from_rgb(self._apples[-1]._color))
 

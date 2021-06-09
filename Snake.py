@@ -1,10 +1,5 @@
 import tkinter as tk
 
-
-#Classes concerning the snake body and movement
-
-
-
 class Body:
 
   def __init__(self, canvas):
@@ -16,7 +11,7 @@ class Body:
     self._create_initial(20, 20)
 
   def add(self, n):
-    # add or remove body parts from the snake
+   
     if n < 0 and len(self._body) > 1:
       if len(self._body) <= abs(n):
         n = len(self._body) - 1
@@ -44,11 +39,7 @@ class Body:
           MovableObject(
               self._create_circle(x, y, 5, fill="#BBB", outline=""), x, y,
               self._body[-1]._direction))
-
- 
-
-
- def change_direction(self, direction):
+def change_direction(self, direction):
     if direction == self._current_direction:
       return
     if direction == "left" and self._current_direction == "right":
