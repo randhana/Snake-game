@@ -1,10 +1,11 @@
 import tkinter as tk
 from Snake import Body
+
+
 class Game:
 
   #Class 
   
-
   def __init__(self, canvas, limits):
     self._canvas = canvas
     self._limits = limits
@@ -124,4 +125,4 @@ def _loop(self):
 
 if __name__ == "__main__":
   # Start
-  Window("Snakes", 500, 500)
+  Window("Snakes", 450, 450)
