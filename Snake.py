@@ -23,9 +23,10 @@ class Body:
       return
 
     for _ in range(n):
+      
       x = self._body[-1]._x
       y = self._body[-1]._y
-
+   #movements
       if self._body[-1]._direction == self._get_dir("left"):
         x += 10
       elif self._body[-1]._direction == self._get_dir("right"):
@@ -41,6 +42,7 @@ class Body:
               self._body[-1]._direction))
       
   def change_direction(self, direction):
+    
     if direction == self._current_direction:
       return
     if direction == "left" and self._current_direction == "right":
