@@ -21,7 +21,7 @@ class Game:
     self._count = 1
     
     self.points = 0
-
+    
   def _check_hit(self):
     # Check if hit or not
     
@@ -42,7 +42,8 @@ class Game:
 
   def _from_rgb(self, rgb):
     
-    return "#%02x%02x%02x" % rgb  #rgb code represented as a tuple of integers.
+    return "#%02x%02x%02x" % rgb  #rgb code represented as a tuple of integers.  
+
 
 
   def generate_apple(self):
