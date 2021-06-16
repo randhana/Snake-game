@@ -1,10 +1,11 @@
 import tkinter as tk
 from Snake import Body
+
+
 class Game:
 
   #Class 
   
-
   def __init__(self, canvas, limits):
     self._canvas = canvas
     self._limits = limits
@@ -18,11 +19,12 @@ class Game:
 
     self._apples = []
     self._count = 1
-
+    
     self.points = 0
     
   def _check_hit(self):
     # Check if hit or not
+    
     head = self._snake._body[0]
     self._apple_rule(head)
     self._wall_rule(head)
@@ -125,4 +127,4 @@ def _loop(self):
 
 if __name__ == "__main__":
   # Start
-  Window("Snakes", 500, 500)
+  Window("Snakes", 450, 450)

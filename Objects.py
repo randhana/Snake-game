@@ -1,7 +1,9 @@
 import random
 
 class StaticObject:
+  
  #initialize
+  
   def __init__(self, tag, x, y):
     self._id = tag
     self._x = x
@@ -11,6 +13,7 @@ class StaticObject:
 class MovableObject(StaticObject):
 
   def __init__(self, tag, x, y, direction):
+    
     super().__init__(tag, x, y)
     self._direction = direction 
     
@@ -18,6 +21,7 @@ class MovableObject(StaticObject):
 class Apple(StaticObject):
 
   def __init__(self, tag, x, y):
+    
     super().__init__(tag, x, y)
     self._value = random.randint(0, 10)
 
@@ -34,6 +38,7 @@ class Apple(StaticObject):
 class Wall:
 
   def __init__(self, tag, x_i, y_i, x_f, y_f):
+    
     self._id = tag
     self._x_i = x_i
     self._y_i = y_i

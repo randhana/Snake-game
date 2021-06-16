@@ -23,9 +23,10 @@ class Body:
       return
 
     for _ in range(n):
+      
       x = self._body[-1]._x
       y = self._body[-1]._y
-
+   #movements
       if self._body[-1]._direction == self._get_dir("left"):
         x += 10
       elif self._body[-1]._direction == self._get_dir("right"):
@@ -39,7 +40,13 @@ class Body:
           MovableObject(
               self._create_circle(x, y, 5, fill="#BBB", outline=""), x, y,
               self._body[-1]._direction))
+
+      
+  
+    
+
 def change_direction(self, direction):
+
     if direction == self._current_direction:
       return
     if direction == "left" and self._current_direction == "right":
@@ -53,3 +60,17 @@ def change_direction(self, direction):
 
     self._current_direction = direction
     self._body[0]._direction = self._get_dir(direction)
+
+
+  def iterate(self, limits=None):
+    # move the snake around
+    for i in range(len(self._body) - 1, -1, -1):
+      if limits == None:
+        self._canvas.move(self._body[i]._id, *self._body[i]._direction)
+        self._body[i]._x += self._body[i]._direction[0]
+        self._body[i]._y += self._body[i]._direction[1]
+      else:
+        pass
+        
+      if i > 0:
+        self._body[i]._direction = self._body[i - 1]._direction
