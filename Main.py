@@ -91,6 +91,7 @@ class Window(tk.Tk):
         borderwidth=0,
         highlightthickness=0,
         bg="white")
+    
     # align canvas
     self._canvas.grid()
 
@@ -126,5 +127,6 @@ def _loop(self):
 
 
 if __name__ == "__main__":
+  
   # Start
   Window("Snakes", 450, 450)
