@@ -1,8 +1,10 @@
 import tkinter as tk
+#import time 
 
 class Body:
 
   def __init__(self, canvas):
+    
     self._canvas = canvas
     self._body = []
     self._current_direction = "right"
