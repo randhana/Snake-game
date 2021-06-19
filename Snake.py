@@ -17,6 +17,7 @@ class Body:
    
     if n < 0 and len(self._body) > 1:
       if len(self._body) <= abs(n):
+        
         n = len(self._body) - 1
 
       for _ in range(abs(n)):
@@ -44,6 +45,10 @@ class Body:
           MovableObject(
               self._create_circle(x, y, 5, fill="#BBB", outline=""), x, y,
               self._body[-1]._direction))
+
+  def _create_circle(self, x, y, r, **kwargs):
+    return self._canvas.create_oval(x - r, y - r, x + r, y + r, **kwargs)
+  
       
   def change_direction(self, direction):
     
