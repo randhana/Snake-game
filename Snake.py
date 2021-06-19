@@ -1,4 +1,5 @@
 import tkinter as tk
+
 #import time 
 
 class Body:
@@ -28,7 +29,8 @@ class Body:
       
       x = self._body[-1]._x
       y = self._body[-1]._y
-   #movements
+      
+   # movements
       if self._body[-1]._direction == self._get_dir("left"):
         x += 10
       elif self._body[-1]._direction == self._get_dir("right"):

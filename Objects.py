@@ -2,7 +2,7 @@ import random
 
 class StaticObject:
   
- #initialize
+#initialize
   
   def __init__(self, tag, x, y):
     self._id = tag
@@ -23,6 +23,7 @@ class Apple(StaticObject):
   def __init__(self, tag, x, y):
     
     super().__init__(tag, x, y)
+    
     self._value = random.randint(0, 10)
 
     if self._value < 3:
