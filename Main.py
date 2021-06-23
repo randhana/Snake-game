@@ -4,7 +4,7 @@ from Snake import Body
 
 class Game:
 
-  #Class 
+#Class 
   
   def __init__(self, canvas, limits):
     self._canvas = canvas
@@ -35,6 +35,7 @@ class Game:
     self._snake.iterate()
    
     self._count -= 1
+    
     if self._count == 0:
       self.generate_apple()
 
@@ -84,6 +85,7 @@ class Window(tk.Tk):
 
     # canvas
     self._canvas = tk.Canvas(
+      
         self,
         width=width,
         height=height,
