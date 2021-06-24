@@ -4,7 +4,7 @@ from Snake import Body
 
 class Game:
 
-  #Class 
+#Class 
   
   def __init__(self, canvas, limits):
     self._canvas = canvas
@@ -35,6 +35,7 @@ class Game:
     self._snake.iterate()
    
     self._count -= 1
+    
     if self._count == 0:
       self.generate_apple()
 
@@ -73,6 +74,30 @@ class Game:
     self._canvas.itemconfig(
         self._apples[-1]._id, fill=self._from_rgb(self._apples[-1]._color))
 
+  def _apple_rule(self, head):
+    # Define some rules for the apple
+    for a in self._apples:
+      if a._x == head._x and a._y == head._y:
+        self.points += a._value
+        self._canvas.delete(a._id)
+        self._apples.remove(a)
+
+        if a._value > 8:
+          self._snake.add(-3)
+
+        if a._value > 7:
+          # instant generate a new apple if the value of eaten apple > 7
+          self.generate_apple()
+
+          if a._value < 9:
+            self._snake.add(3)
+        else:
+          self._snake.add(1)
+
+        print("Score: " + str(self.points) + " Snake size: " +
+              str(len(self._snake._body)))
+
+
   def change_snake_direction(self, direction):
     self._snake.change_direction(direction)
     
@@ -85,6 +110,7 @@ class Window(tk.Tk):
 
     # canvas
     self._canvas = tk.Canvas(
+      
         self,
         width=width,
         height=height,
