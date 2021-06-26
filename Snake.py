@@ -82,6 +82,7 @@ def change_direction(self, direction):
     for i in range(len(self._body) - 1, -1, -1):
       
       if limits == None:
+        
         self._canvas.move(self._body[i]._id, *self._body[i]._direction)
         self._body[i]._x += self._body[i]._direction[0]
         self._body[i]._y += self._body[i]._direction[1]
