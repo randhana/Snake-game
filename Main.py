@@ -7,6 +7,7 @@ class Game:
 #Class 
   
   def __init__(self, canvas, limits):
+    
     self._canvas = canvas
     self._limits = limits
 
@@ -74,8 +75,10 @@ class Game:
         self._apples[-1]._id, fill=self._from_rgb(self._apples[-1]._color))
 
   def _apple_rule(self, head):
+    
     # Define some rules for the apple
     for a in self._apples:
+      
       if a._x == head._x and a._y == head._y:
         self.points += a._value
         self._canvas.delete(a._id)
@@ -98,6 +101,7 @@ class Game:
 
 
   def change_snake_direction(self, direction):
+    
     self._snake.change_direction(direction)
     
 class Window(tk.Tk):
