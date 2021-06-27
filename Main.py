@@ -105,6 +105,11 @@ class Game:
     
     self._snake.change_direction(direction)
     
+def _create_walls(self):
+    self._game_bound = Wall(
+        self._canvas.create_rectangle(*self._limits), *self._limits)
+  
+    
 class Window(tk.Tk):
   
 
