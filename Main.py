@@ -19,11 +19,13 @@ class Game:
     self._create_walls()
 
     self._apples = []
+    
     self._count = 1
     
     self.points = 0
 
   def _check_hit(self):
+    
     # Check if hit or not
     
     head = self._snake._body[0]
