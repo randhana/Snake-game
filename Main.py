@@ -3,8 +3,7 @@ from Snake import Body
 
 
 class Game:
-
-#Class 
+s#Class 
   
   def __init__(self, canvas, limits):
     

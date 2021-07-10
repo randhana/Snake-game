@@ -1,7 +1,6 @@
 import tkinter as tk
 
 #import time 
-
 class Body:
 
   def __init__(self, canvas):
