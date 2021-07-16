@@ -1,9 +1,11 @@
 import tkinter as tk
+
 from Snake import Body
 
 
 class Game:
-s#Class 
+
+#Class 
   
   def __init__(self, canvas, limits):
     
